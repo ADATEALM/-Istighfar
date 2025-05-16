@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>عداد الأذكار</title>
     <meta name="theme-color" content="#007bff">
     <meta name="description" content="عداد الأذكار الإلكتروني لتسجيل استغفارك وتسبيحك وصلاة على النبي">
@@ -64,9 +64,6 @@
             flex-direction: column;
             position: relative;
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
-            overscroll-behavior-y: contain;
-            -webkit-overflow-scrolling: touch;
         }
 
         #app {
@@ -157,8 +154,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
         }
 
         .button:hover {
@@ -303,7 +298,6 @@
             transform: translateY(-20px);
             transition: all 0.3s;
             text-align: center;
-            -webkit-overflow-scrolling: touch;
         }
 
         .modal.active .modal-content {
@@ -445,77 +439,7 @@
             color: white;
         }
 
-        /* إطار الفتوى */
-        .fatwa-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .fatwa-content {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .fatwa-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding-bottom: 10px;
-        }
-
-        .fatwa-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--button-bg);
-        }
-
-        .close-fatwa {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-
-        .fatwa-body {
-            line-height: 1.8;
-            text-align: right;
-        }
-
-        .fatwa-body p {
-            margin-bottom: 15px;
-        }
-
-        .fatwa-link {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .fatwa-link:hover {
-            text-decoration: underline;
-        }
-
-        .info-btn {
-            background-color: var(--info-color);
-            color: white;
-        }
-
+      
         /* تحسينات للشاشات الصغيرة */
         @media (max-width: 480px) {
             #app {
@@ -618,144 +542,7 @@
             }
         }
 
-        /* تحسينات إضافية للشاشات الصغيرة */
-        @media (max-width: 320px) {
-            #app {
-                padding: 15px 10px;
-            }
-            
-            h1 {
-                font-size: 1.1rem;
-            }
-            
-            .button {
-                width: 50px;
-                height: 50px;
-                font-size: 0.8rem;
-            }
-            
-            .action-button {
-                padding: 8px 10px;
-                font-size: 0.8rem;
-            }
-            
-            .message {
-                font-size: 0.9rem;
-            }
-            
-            .stats {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* تحسينات للأجهزة ذات الشاشات الطويلة */
-        @media (max-height: 600px) {
-            #app {
-                margin-bottom: 40px;
-            }
-            
-            footer {
-                position: relative;
-                margin-top: 20px;
-            }
-        }
-
-        /* منع تكبير النص على أجهزة iOS */
-        @media (hover: none) {
-            .button:hover {
-                transform: none;
-            }
-        }
-
-        /* تحسينات للوضع الأفقي (Landscape Mode) */
-        @media screen and (orientation: landscape) {
-            #app {
-                max-width: 90%;
-                margin: 20px auto;
-            }
-            
-            .button-container {
-                flex-direction: row;
-                justify-content: center;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            /* تحسينات للأجهزة الصغيرة في الوضع الأفقي */
-            @media (max-height: 400px) {
-                #app {
-                    padding: 10px;
-                    margin-bottom: 10px;
-                }
-                
-                h1 {
-                    font-size: 1.2rem;
-                    margin-bottom: 10px;
-                }
-                
-                .counter {
-                    font-size: 2rem;
-                    margin: 10px 0;
-                }
-                
-                .button {
-                    width: 50px;
-                    height: 50px;
-                    font-size: 0.8rem;
-                }
-                
-                footer {
-                    position: relative;
-                    margin-top: 10px;
-                }
-            }
-        }
 
-        /* تحسينات إضافية للشاشات الصغيرة جداً */
-        @media (max-width: 280px) {
-            h1 {
-                font-size: 1.1rem;
-            }
-            
-            .button {
-                width: 45px;
-                height: 45px;
-                font-size: 0.7rem;
-            }
-            
-            .action-button {
-                padding: 6px 8px;
-                font-size: 0.7rem;
-            }
-            
-            .message {
-                font-size: 0.8rem;
-            }
-            
-            .stats {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- إطار تحديد الجنس -->
-    <div class="gender-modal" id="genderModal">
-        <div class="gender-content">
-            <h2 class="gender-title">اختر نوعك لتخصيص العداد</h2>
-            <p>سيتم استخدام هذا لتخصيص  صيغ الرسائل الموجهة لك (مسلم/مسلمة) 
-                اعلم ان هاذا الاجراء لن يتغير ف
-                
-             <span style="color: red;">اختر الإجابة الصحيحة</span>
-            </p>
-            <div class="gender-buttons">
-                <button class="gender-btn male-btn" id="maleBtn">رجل</button>
-                <button class="gender-btn female-btn" id="femaleBtn">امرأة</button>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -786,168 +573,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- نافذة عرض الفتوى -->
-<div class="fatwa-modal" id="fatwaModal" style="display: none;">
-  <div class="fatwa-content">
-    <div class="fatwa-header">
-      <h3 class="fatwa-title">حكم الأذكار والصلاة على النبي صلى الله عليه وسلم على غير طهارة</h3>
-      <button class="close-fatwa" id="closeFatwa">&times;</button>
-    </div>
-    <div class="fatwa-body">
-      <p>الإجابــة<br>
-      الحمد لله، والصلاة والسلام على رسول الله، وعلى آله وصحبه، أما بعد:</p>
-      
-      <p>فإن الأفضل والأكمل للمسلم إذا أراد الصلاة على النبي صلى الله عليه وسلم أو قراءة الأذكار والأدعية .. أن يكون على طهارة كاملة وهيئة حسنة، لكن لا مانع من أن يصلي على النبي صلى الله عليه وسلم، ويذكر الله تعالى ويدعوه وهو جنب أو حائض أو محدث حدثاً أصغر أو على أي هيئة كان.</p>
-      
-      <p>لقوله تعالى في وصف عباده أولي الألباب (الَّذِينَ يَذْكُرُونَ اللَّهَ قِيَاماً وَقُعُوداً وَعَلَى جُنُوبِهِم) (آل عمران: من الآية191).</p>
-      
-      <p>ولما في الصحيحين عن عائشة رضي الله عنها قالت: كان النبي صلى الله عليه وسلم يذكر الله على كل أحيانه.</p>
-      
-      <p>إلا إذا كان هذا الذكر قرآناً فإنه لا يجوز ذلك في حالة الجنابة على الصحيح، لما رواه أحمد وأصحاب السنن عن علي رضي الله عنه قال: كان رسول الله صلى الله عليه وسلم يقرئنا القرآن ما لم يكن جنباً.</p>
-      
-      <p>والله أعلم.</p>
-      
-      <p>مصدر الفتوى: <a href="https://www.islamweb.net/ar/fatwa/864/" class="fatwa-link" target="_blank">إسلام ويب</a></p>
-    </div>
-  </div>
-</div>
-
-<style>
-  /* تنسيقات زر الفتوى المعدل */
+          /* تنسيقات زر الفتوى المعدل */
   .action-button.info-btn {
     display: inline-flex;
     align-items: center;
@@ -958,6 +584,10 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+
+
+      background-color: #4CAF50; /* لون الخلفية */
+  color: white;
   }
   
   /* تنسيقات نافذة الفتوى */
@@ -1040,36 +670,20 @@
       font-size: 1.1rem;
     }
   }
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // عناصر DOM
-  const fatwaBtn = document.getElementById('fatwaBtn');
-  const fatwaModal = document.getElementById('fatwaModal');
-  const closeFatwa = document.getElementById('closeFatwa');
-  
-  // فتح نافذة الفتوى
-  fatwaBtn.addEventListener('click', function() {
-    fatwaModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-  
-  // إغلاق نافذة الفتوى
-  closeFatwa.addEventListener('click', function() {
-    fatwaModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  });
-  
-  // إغلاق النافذة عند النقر خارجها
-  fatwaModal.addEventListener('click', function(e) {
-    if (e.target === fatwaModal) {
-      fatwaModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  });
-});
-</script>
+    </style>
+</head>
+<body>
+    <!-- إطار تحديد الجنس -->
+    <div class="gender-modal" id="genderModal">
+        <div class="gender-content">
+            <h2 class="gender-title">اختر نوعك لتخصيص العداد</h2>
+            <p>سيتم استخدام هذا لتخصيص الرسائل الموجهة لك (مسلم/مسلمة)</p>
+            <div class="gender-buttons">
+                <button class="gender-btn male-btn" id="maleBtn">رجل</button>
+                <button class="gender-btn female-btn" id="femaleBtn">امرأة</button>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -1079,24 +693,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+<!-- زر الفتوى المعدل ليحل محل زر فتوى الطهارة -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- نافذة عرض الفتوى -->
+<div class="fatwa-modal" id="fatwaModal" style="display: none;">
+  <div class="fatwa-content">
+    <div class="fatwa-header">
+      <h3 class="fatwa-title">حكم الأذكار والصلاة على النبي صلى الله عليه وسلم على غير طهارة</h3>
+      <button class="close-fatwa" id="closeFatwa">&times;</button>
+    </div>
+    <div class="fatwa-body">
+      <p>الإجابــة<br>
+      الحمد لله، والصلاة والسلام على رسول الله، وعلى آله وصحبه، أما بعد:</p>
+      
+      <p>فإن الأفضل والأكمل للمسلم إذا أراد الصلاة على النبي صلى الله عليه وسلم أو قراءة الأذكار والأدعية .. أن يكون على طهارة كاملة وهيئة حسنة، لكن لا مانع من أن يصلي على النبي صلى الله عليه وسلم، ويذكر الله تعالى ويدعوه وهو جنب أو حائض أو محدث حدثاً أصغر أو على أي هيئة كان.</p>
+      
+      <p>لقوله تعالى في وصف عباده أولي الألباب (الَّذِينَ يَذْكُرُونَ اللَّهَ قِيَاماً وَقُعُوداً وَعَلَى جُنُوبِهِم) (آل عمران: من الآية191).</p>
+      
+      <p>ولما في الصحيحين عن عائشة رضي الله عنها قالت: كان النبي صلى الله عليه وسلم يذكر الله على كل أحيانه.</p>
+      
+      <p>إلا إذا كان هذا الذكر قرآناً فإنه لا يجوز ذلك في حالة الجنابة على الصحيح، لما رواه أحمد وأصحاب السنن عن علي رضي الله عنه قال: كان رسول الله صلى الله عليه وسلم يقرئنا القرآن ما لم يكن جنباً.</p>
+      
+      <p>والله أعلم.</p>
+      
+      <p>مصدر الفتوى: <a href="https://www.islamweb.net/ar/fatwa/864/" class="fatwa-link" target="_blank">إسلام ويب</a></p>
+    </div>
+  </div>
+</div>
 
 
 
@@ -1139,11 +762,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="action-button sound-btn" id="sound-btn">إيقاف الصوت</button>
             <button class="action-button vibration-btn" id="vibration-btn">إيقاف الاهتزاز</button>
             <button class="action-button toggle-theme" id="theme-btn">الوضع الداكن</button>
-
-            <!-- زر الفتوى المعدل ليحل محل زر فتوى الطهارة -->
+           
 <button class="action-button info-btn" id="fatwaBtn">
   <i class="fas fa-info-circle"></i> فتوى الأذكار على غير طهارة
 </button>
+
+
+
 
         </div>
     </div>
@@ -1215,28 +840,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // تهيئة الصوت
         const audio = new Audio('data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV');
 
-        // التحقق من دعم localStorage
-        function checkLocalStorage() {
-            try {
-                localStorage.setItem('test', 'test');
-                localStorage.removeItem('test');
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-
         // تحميل البيانات المحفوظة
         function loadData() {
-            if (checkLocalStorage()) {
-                const savedData = localStorage.getItem('azkarCounterData');
-                if (savedData) {
-                    const parsedData = JSON.parse(savedData);
-                    appData.counts = parsedData.counts || appData.counts;
-                    appData.settings = parsedData.settings || appData.settings;
-                    appData.theme = parsedData.theme || appData.theme;
-                    appData.gender = parsedData.gender || null;
-                }
+            const savedData = localStorage.getItem('azkarCounterData');
+            if (savedData) {
+                const parsedData = JSON.parse(savedData);
+                appData.counts = parsedData.counts || appData.counts;
+                appData.settings = parsedData.settings || appData.settings;
+                appData.theme = parsedData.theme || appData.theme;
+                appData.gender = parsedData.gender || null;
             }
             
             // إذا كان الجنس محدداً مسبقاً، نعرض التطبيق مباشرة
@@ -1250,13 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // حفظ البيانات
         function saveData() {
-            if (checkLocalStorage()) {
-                try {
-                    localStorage.setItem('azkarCounterData', JSON.stringify(appData));
-                } catch (e) {
-                    console.log("لا يمكن حفظ البيانات، قد يكون تخزين localStorage ممتلئاً");
-                }
-            }
+            localStorage.setItem('azkarCounterData', JSON.stringify(appData));
         }
 
         // تحديث واجهة المستخدم
@@ -1275,46 +881,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // تحديث سنة حقوق النشر
             elements.year.textContent = new Date().getFullYear();
-        }
-
-        // تأثير الاهتزاز للجهاز
-        function vibrateDevice() {
-            if (appData.settings.vibration) {
-                try {
-                    // 50ms vibration for most devices
-                    if (navigator.vibrate) {
-                        navigator.vibrate(50);
-                    } 
-                    // Fallback for older browsers
-                    else if (navigator.webkitVibrate) {
-                        navigator.webkitVibrate(50);
-                    }
-                } catch (e) {
-                    console.log("Vibration not supported");
-                }
-            }
-        }
-
-        // تشغيل الصوت
-        function playSound() {
-            if (appData.settings.sound) {
-                try {
-                    audio.volume = 0.2; // تخفيض الصوت لتجنب المشاكل
-                    audio.play().then(() => {
-                        // الصوت يعمل
-                    }).catch(e => {
-                        // على iOS، يحتاج التفاعل مع المستخدم أولاً
-                        console.log("لم يتم تشغيل الصوت:", e);
-                        
-                        // عرض رسالة للمستخدم لتوجيهه للنقر على الصفحة أولاً
-                        if (e.name === 'NotAllowedError') {
-                            showNotification("الرجاء النقر على الصفحة أولاً لتمكين الصوت");
-                        }
-                    });
-                } catch (e) {
-                    console.log("خطأ في تشغيل الصوت:", e);
-                }
-            }
         }
 
         // عرض الإشعار
@@ -1364,7 +930,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showMilestone(messages[type], verses[type]);
             }
             else if (count === 1000) {
-                const maleMsg = "فلنجاوز الألف في كل ذكر يا مجاهد  النفس! بعد تحقيق الألف في كل منهم، فنقول لك : بارك الله فيك وحفظك، فلتضف المزيد ما استطعت.";
+                const maleMsg = "فلنجاوز الألف في كل ذكر يا مجاهد  النفس! بعد تحقيق الألف في كل منهم، فنقول لك : بارك الله فيك وحفظك، فلتضف المزيد ما استطعت ان شاء الله.";
                 const femaleMsg = " فلنجاوز الألف في كل ذكر يا  مجاهدة النفس! بعد تحقيق الألف في كل منهم، فنقول لك: بارك الله فيكي وحفظك، فأضيفي المزيد ما استطعت ان شاء الله .";
                 
                 const msg = appData.gender === 'male' ? maleMsg : femaleMsg;
@@ -1376,10 +942,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // زيادة العداد
         function incrementCounter(type) {
             // تأثير الصوت
-            playSound();
+            if (appData.settings.sound) {
+                audio.currentTime = 0;
+                audio.play().catch(e => console.log("لم يتم تشغيل الصوت:", e));
+            }
             
             // تأثير الاهتزاز
-            vibrateDevice();
+            if (appData.settings.vibration && 'vibrate' in navigator) {
+                navigator.vibrate(50);
+            }
             
             // تأثير النبض للعداد
             elements.counter.classList.add('counter-animate');
@@ -1472,16 +1043,6 @@ document.addEventListener('DOMContentLoaded', function() {
             elements.message.textContent = initialMessages[gender];
         }
 
-        // الكشف عن تفضيلات الوضع الداكن في النظام
-        function detectSystemTheme() {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                appData.theme = 'dark';
-            } else {
-                appData.theme = 'light';
-            }
-            updateUI();
-        }
-
         // عرض فتوى الطهارة
         function showFatwa() {
             elements.fatwaModal.style.display = 'flex';
@@ -1531,361 +1092,69 @@ document.addEventListener('DOMContentLoaded', function() {
             
             elements.infoBtn.addEventListener('click', showFatwa);
             elements.closeFatwa.addEventListener('click', closeFatwa);
-
-            // تمكين الصوت على iOS عند النقر الأول
-            document.addEventListener('click', function() {
-                audio.volume = 0;
-                audio.play().then(() => {
-                    audio.pause();
-                    audio.currentTime = 0;
-                }).catch(e => {});
-            }, { once: true });
         }
 
         // تهيئة التطبيق
         function init() {
-            detectSystemTheme();
             loadData();
             initEvents();
-            
-            // إضافة listener لتغيرات الوضع الداكن في النظام
-            if (window.matchMedia) {
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                    appData.theme = e.matches ? 'dark' : 'light';
-                    updateUI();
-                    saveData();
-                });
-            }
         }
 
         // تشغيل التطبيق
         document.addEventListener('DOMContentLoaded', init);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // عناصر DOM
+  const fatwaBtn = document.getElementById('fatwaBtn');
+  const fatwaModal = document.getElementById('fatwaModal');
+  const closeFatwa = document.getElementById('closeFatwa');
+  
+  // فتح نافذة الفتوى
+  fatwaBtn.addEventListener('click', function() {
+    fatwaModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+  
+  // إغلاق نافذة الفتوى
+  closeFatwa.addEventListener('click', function() {
+    fatwaModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  // إغلاق النافذة عند النقر خارجها
+  fatwaModal.addEventListener('click', function(e) {
+    if (e.target === fatwaModal) {
+      fatwaModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
+
+
+
+
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>إشعارات هامة</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        .custom-modal {
-            display: flex;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .custom-modal-content {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 15px;
-            border-radius: 15px;
-            width: 95%;
-            max-width: 350px;
-            max-height: 90vh;
-            overflow-y: auto;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-            animation: fadeIn 0.3s ease-in-out;
-            box-sizing: border-box;
-            margin: 10px;
-        }
-        .custom-button {
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 14px;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s, transform 0.2s;
-            width: 100%;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
-        .btn-close {
-            background-color: #d9534f;
-            color: white;
-        }
-        .btn-close:hover {
-            background-color: #c9302c;
-            transform: scale(1.05);
-        }
-        h1 {
-            font-size: 1.3rem;
-            margin-top: 0;
-        }
-        p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        
-        @media (max-width: 480px) {
-            .custom-modal-content {
-                padding: 12px;
-                width: 98%;
-            }
-            h1 {
-                font-size: 1.2rem;
-            }
-            p {
-                font-size: 0.85rem;
-            }
-            .custom-button {
-                padding: 8px;
-                font-size: 0.9rem;
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- إشعار سورة الكهف -->
-    <div id="kahfModal" class="custom-modal" style="display: none;">
-        <div class="custom-modal-content">
-            <h1>فضل سورة الكهف</h1>
-            <p>من قرأ سورةَ ( الكهفِ ) في يومِ الجمعةِ أضاء له من النورِ ما بين الجمُعَتَين
-              الراوي : أبو سعيد الخدري | المحدث : الألباني | المصدر : صحيح الترغيب | الصفحة أو الرقم : 736 | خلاصة حكم المحدث : صحيح | التخريج : أخرجه البيهقي (6209) واللفظ له، وأخرجه الحاكم (3392) باختلاف يسير</p>
-           
-            <button onclick="window.location.href='سورة الكهف مكتوبة.html'" class="custom-button">انتقل إليها الآن</button>
-            <button class="custom-button btn-close" onclick="closeModal('kahfModal')">إغلاق</button>
-        </div>
-    </div>
-    
-    <!-- إشعار صلاة الجمعة -->
-    <div id="jumaaModal" class="custom-modal" style="display: none;">
-        <div class="custom-modal-content">
-            <h1>فضل صلاة الجمعة</h1>
-            <audio id="jumaaAudio">
-                <source src="SALAT JOMOAA/JOMAA.mp3" type="audio/mpeg">
-                متصفحك لا يدعم تشغيل الصوت.
-            </audio>
-
-            <p>من غسَّلَ يومَ الجمعةِ واغتسلَ ثمَّ بَكَّرَ وابتَكرَ ومشى ولم يرْكب ودنا منَ الإمامِ فاستمعَ ولم يلغُ كانَ لَهُ بِكلِّ خطوةٍ عملُ سنةٍ أجرُ صيامِها وقيامِها
-            الراوي : أوس بن أبي أوس وقيل أوس بن أوس والد عمرو | المحدث : الألباني | المصدر : صحيح أبي داود
-            الصفحة أو الرقم: 345 | خلاصة حكم المحدث : صحيح</p>
-           
-            <p>الصَّلَوَاتُ الخَمْسُ، وَالْجُمْعَةُ إلى الجُمْعَةِ، وَرَمَضَانُ إلى رَمَضَانَ، مُكَفِّرَاتٌ ما بيْنَهُنَّ إِذَا اجْتَنَبَ الكَبَائِرَ.
-            الراوي : أبو هريرة | المحدث : مسلم | المصدر : صحيح مسلم
-            الصفحة أو الرقم: 233 | خلاصة حكم المحدث : [صحيح]</p>
-
-            <p>قال رسول الله ﷺ: "أفضلُ يومٍ طلعتْ فيه الشمسُ يومُ الجمعةِ، فيه خُلِقَ آدمُ، وفيه أُدخلَ الجنةَ، وفيه أُخرجَ منها"
-            . [صحيح] - [رواه مسلم] - [صحيح مسلم - 854]</p>
-
-            <button class="custom-button btn-close" onclick="closeModal('jumaaModal')">إغلاق</button>
-        </div>
-    </div>
-
-    <!-- الإشعار العام -->
-    <div id="generalModal" class="custom-modal" style="display: none;">
-        <div class="custom-modal-content">
-            <h1>⚡ أَدَاة عِلْم ⚡</h1>
-            <p>نحن نعمل باستمرار على تطوير وتحسين موقعنا لنقدم لك أفضل تجربة ممكنة.</p>
-            <p>المزيد قادم والتحديثات يومية ان شاء الله</p>
-            <button class="custom-button btn-close" onclick="closeModal('generalModal')">إغلاق</button>
-        </div>
-    </div>
-
-    <script>
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-    
-        function showModals() {
-            let today = new Date();
-            let dayOfWeek = today.getDay();
-            let hours = today.getHours();
-    
-            // ✅ عرض الإشعار العام فورًا
-            document.getElementById("generalModal").style.display = "flex";
-    
-            if (dayOfWeek === 5) { // الجمعة فقط
-                document.getElementById("kahfModal").style.display = "flex"; // إشعار سورة الكهف
-    
-                if (hours < 14) { // قبل 14:00 فقط
-                    document.getElementById("jumaaModal").style.display = "flex"; // إشعار صلاة الجمعة
-                    
-                    let audio = document.getElementById("jumaaAudio");
-                    if (audio && !audio.dataset.played) { // تشغيل الصوت عند ظهور الإشعار
-                        let playAudio = () => {
-                            audio.play().then(() => {
-                                audio.dataset.played = "true"; // منع التكرار
-                                console.log("تم تشغيل صوت صلاة الجمعة.");
-                            }).catch(error => console.log("تشغيل الصوت يتطلب تفاعل المستخدم", error));
-                        };
-    
-                        if (document.hasFocus()) {
-                            playAudio();
-                        } else {
-                            document.addEventListener("click", playAudio, { once: true });
-                            document.addEventListener("touchstart", playAudio, { once: true });
-                        }
-    
-                        audio.onended = function () {
-                            console.log("انتهى تشغيل ملف الصوت.");
-                        };
-                    }
-                }
-            }
-        }
-    
-        document.addEventListener("DOMContentLoaded", function() {
-            let today = new Date();
-            let dayOfWeek = today.getDay();
-            let hours = today.getHours();
-    
-            if (dayOfWeek === 5 && hours < 14) { // تشغيل الصوت فقط يوم الجمعة قبل 14:00
-                let audio = document.getElementById("jumaaAudio");
-                if (audio) {
-                    document.body.addEventListener("click", function() {
-                        if (audio.paused) {
-                            audio.play().catch(error => console.log("تشغيل الصوت يتطلب تفاعل المستخدم", error));
-                        }
-                    }, { once: true });
-                }
-            }
-        });
-    
-        // ✅ تشغيل `showModals` دائمًا لإظهار الإشعار العام مباشرةً
-        window.onload = showModals;
-    </script>
-</body>
-</html>
-
-
-
-
-
 
 
 
